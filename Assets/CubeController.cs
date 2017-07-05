@@ -27,4 +27,13 @@ public class CubeController : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //衝突時
+        if (collision.gameObject.name != "UnityChan2D")
+        {
+            this.GetComponent<AudioSource>().Play();
+        }
+    }
 }
